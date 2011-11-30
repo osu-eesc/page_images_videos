@@ -1,0 +1,69 @@
+/* Images within site content: image, image description, etc. */
+
+/* main */
+.view-page-images .views-row {
+  border: 1px #C8C8C8 solid;
+  background-color: #F1F1F1;
+  padding: 5px;
+  width: 220px;
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+
+.view-page-images .views-row-last {
+  margin-bottom: 0;
+}
+
+/* border outside */
+.view-page-images .views-row:hover { 
+  border: 1px #d39c7f solid;
+}
+.view-page-images .views-row img {
+  border: 1px #C8C8C8 solid;
+}
+
+/* image desc and image
+.view-page-images .field-content { 
+  line-height: 140%;
+  text-align: left;
+  color: #564C46;
+  padding: 6px 5px 0 5px;
+  display: block;
+}*/
+.views-field-field-page-images-fid {
+  text-align: center;	
+}
+.views-field-field-page-images-data,
+.views-field-field-news-images-data {
+	 line-height: 140%;
+	  text-align: left;
+	  color: #564C46;
+	  display: block;
+}
+/* click img for larger version*/
+.view-page-images .story-image-info { 
+  text-align: right;
+}
+
+.emvideo-thumbnail-replacement span {
+    background: url("gfx_btn_play.png") no-repeat scroll 0 0 transparent !important;
+    display: block;
+    height: 158px !important;
+    position: absolute;
+    width: 210px !important;
+    left: 0 !important;
+    top: 0 !important;
+}
+
+.emvideo-thumbnail-replacement span:hover {
+    background-position: -210px 0 !important;
+}
+
+.emvideo-modal-iframe {
+  min-width: 0 !important;
+  background: none !important;
+}
+
+.emvideo-modal-iframe .emvideo {
+  height: 350px !important;
+}

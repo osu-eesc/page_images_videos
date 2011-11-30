@@ -1,0 +1,34 @@
+<?php
+
+include_once('page_images_videos.features.inc');
+
+
+/**
+ * Implementation of hook_init().
+ */
+function page_images_videos_init() {
+  drupal_add_css(drupal_get_path('module', 'page_images_videos') .'/theme/page-images-videos.css');
+}
+
+function page_images_videos_form_page_node_form_alter(&$form, &$form_state) {
+  $form['#after_build'][] = 'page_images_videos_after_build';
+}
+
+function page_images_videos_after_build(&$form, &$form_state) {
+  $keys = array_filter(array_keys($form['field_page_videos']), 'page_images_videos_numeric_filter');
+  foreach ($keys as $key) {
+    $form['field_page_videos'][$key]['embed']['#description'] = 'Enter the URL or Embed Code here.<br />The following services are provided: <a href="http://vimeo.com/" target="_blank">Vimeo</a>, <a href="http://youtube.com/" target="_blank">YouTube</a>';
+  }
+  $keys = array_filter(array_keys($form['field_page_images']), 'page_images_videos_numeric_filter');
+  foreach ($keys as $key) {
+    preg_match('/\<a\s(.*?)\<\/a\>/', $form['field_page_images'][$key]['filefield_imce']['display_path']['#value'], $matches);
+    $imce_url = 'Upload an image or ' . str_replace('browse', 'click here', $matches['0']) . ' to use an image already on the server.';
+    if ($form['field_page_images'][$key]['#value']['filepath'] == '') $form['field_page_images'][$key]['filefield_sources_list']['#value'] = $imce_url;
+    if ($form_state['clicked_button']['#value'] == 'Remove') $form['field_page_images'][$key]['filefield_sources_list']['#value'] = $imce_url;
+  }
+  return $form;
+}
+
+function page_images_videos_numeric_filter($var) {
+  if (is_numeric($var)) return TRUE;
+}
