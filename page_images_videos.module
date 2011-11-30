@@ -23,6 +23,9 @@ function page_images_videos_after_build(&$form, &$form_state) {
   foreach ($keys as $key) {
     preg_match('/\<a\s(.*?)\<\/a\>/', $form['field_page_images'][$key]['filefield_imce']['display_path']['#value'], $matches);
     $imce_url = 'Upload an image or ' . str_replace('browse', 'click here', $matches['0']) . ' to use an image already on the server.';
+    $form['field_page_images'][$key]['data']['description']['#title'] = 'Photo Caption';
+    $form['field_page_images'][$key]['data']['description']['#description'] = 'Caption will display below the image';
+    $form['field_page_images'][$key]['data']['alt']['#description'] = 'Enter a description of the image. Required for <a href="http://oregonstate.edu/accessibility/alttext" rel="lightframe[|width:1000px; height:850px;]">accessiblity</a>.';
     if ($form['field_page_images'][$key]['#value']['filepath'] == '') $form['field_page_images'][$key]['filefield_sources_list']['#value'] = $imce_url;
     if ($form_state['clicked_button']['#value'] == 'Remove') $form['field_page_images'][$key]['filefield_sources_list']['#value'] = $imce_url;
   }
