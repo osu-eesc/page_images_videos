@@ -17,7 +17,7 @@ function page_images_videos_form_page_node_form_alter(&$form, &$form_state) {
 function page_images_videos_after_build(&$form, &$form_state) {
   $keys = array_filter(array_keys($form['field_page_videos']), 'page_images_videos_numeric_filter');
   foreach ($keys as $key) {
-    $form['field_page_videos'][$key]['embed']['#description'] = 'Enter the URL or Embed Code here.<br />The following services are provided: <a href="http://vimeo.com/" target="_blank">Vimeo</a>, <a href="http://youtube.com/" target="_blank">YouTube</a>';
+    $form['field_page_videos'][$key]['embed']['#description'] = 'Enter the URL or Embed Code here.';
   }
   $keys = array_filter(array_keys($form['field_page_images']), 'page_images_videos_numeric_filter');
   foreach ($keys as $key) {

@@ -138,6 +138,7 @@ function page_images_videos_content_default_fields() {
         'description' => 0,
       ),
       'providers' => array(
+        'mediaspace' => 'mediaspace',
         'vimeo' => 'vimeo',
         'youtube' => 'youtube',
       ),
@@ -151,9 +152,10 @@ function page_images_videos_content_default_fields() {
         ),
       ),
       'default_value_php' => NULL,
-      'label' => 'videos',
+      'label' => 'Videos',
       'weight' => '-2',
-      'description' => '',
+      'description' => 'The following services are available: <a href="http://media.oregonstate.edu" target="blank">OSU MediaSpace</a>, <a href="http://youtube.com/" target="_blank">YouTube</a>, <a href="http://vimeo.com/" target="_blank">Vimeo</a><br />
+Note: MediaSpace videos only accept Embed Code.',
       'type' => 'emvideo_textfields',
       'module' => 'emvideo',
     ),
@@ -161,8 +163,8 @@ function page_images_videos_content_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Videos');
   t('images');
-  t('videos');
 
   return $fields;
 }
