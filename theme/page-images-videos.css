@@ -46,7 +46,8 @@
 }
 
 .emvideo-thumbnail-replacement span {
-    background: url("gfx_btn_play.png") no-repeat scroll 0 0 transparent !important;
+    background: url("gfx_btn_play.png") no-repeat scroll 6px 50% transparent !important;
+		_background: url("gfx_btn_play_single.png") no-repeat scroll 50% 50% transparent !important; /*IE6*/
     display: block;
     height: 158px !important;
     position: absolute;
@@ -56,7 +57,8 @@
 }
 
 .emvideo-thumbnail-replacement span:hover {
-    background-position: -210px 0 !important;
+    background-position: -204px 0 !important;
+		_background-position: 50% 50% !important; /*IE6*/
 }
 
 .emvideo-modal-iframe {
@@ -66,4 +68,30 @@
 
 .emvideo-modal-iframe .emvideo {
   height: 350px !important;
+}
+
+/* cck video embed form */
+
+#field-page-videos-items .form-item[id$="emvideo-delete-wrapper"] {
+	float: right;
+	padding: 0 20px 0 0;
+}
+
+#field-page-videos-items .form-item input[type="text"] {
+	width: 380px;
+}
+
+#field-page-videos-items .form-item label {
+	padding: 5px 0 0 0;
+}
+
+#field-page-videos-items .form-item .media-id {
+	display: block;
+	min-height: 5px;
+	padding: 3px 0 0 0;
+	color: #808080;
+}
+
+#field-page-videos-items .form-item .media-id a {
+	color: inherit !important;
 }

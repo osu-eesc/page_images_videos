@@ -55,7 +55,7 @@ function page_images_videos_content_default_fields() {
       'max_resolution' => '0',
       'min_resolution' => '0',
       'alt' => '',
-      'custom_alt' => 0,
+      'custom_alt' => 1,
       'title' => '',
       'custom_title' => 0,
       'title_type' => 'textfield',
@@ -138,6 +138,7 @@ function page_images_videos_content_default_fields() {
         'description' => 0,
       ),
       'providers' => array(
+        'mediaspace' => 'mediaspace',
         'vimeo' => 'vimeo',
         'youtube' => 'youtube',
       ),
@@ -151,9 +152,9 @@ function page_images_videos_content_default_fields() {
         ),
       ),
       'default_value_php' => NULL,
-      'label' => 'videos',
+      'label' => 'Videos',
       'weight' => '-2',
-      'description' => '',
+      'description' => 'Find or upload <a href="http://media.oregonstate.edu" target="blank">OSU MediaSpace</a> videos.',
       'type' => 'emvideo_textfields',
       'module' => 'emvideo',
     ),
@@ -161,8 +162,8 @@ function page_images_videos_content_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Videos');
   t('images');
-  t('videos');
 
   return $fields;
 }

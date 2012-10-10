@@ -22,12 +22,12 @@ function page_images_videos_strongarm() {
     'body_field' => '-4',
     'revision_information' => '1',
     'author' => '2',
-    'options' => '3',
+    'options' => '0',
     'menu' => '-1',
-    'book' => '0',
-    'path' => '6',
-    'attachments' => '5',
-    'path_redirect' => '4',
+    'book' => '4',
+    'path' => '3',
+    'attachments' => '6',
+    'path_redirect' => '5',
   );
   $export['content_extra_weights_page'] = $strongarm;
 
