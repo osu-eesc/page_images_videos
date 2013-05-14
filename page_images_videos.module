@@ -14,8 +14,10 @@ function page_images_videos_form_page_node_form_alter(&$form, &$form_state) {
   $form['#after_build'][] = 'page_images_videos_after_build';
 }
 
+// , or <a href="http://media.oregonstate.edu/" target="_blank">MediaSpace</a> code for media space
+
 function page_images_videos_after_build(&$form, &$form_state) {
-		$form['field_page_videos']['#description'] = 'Upload videos from <a href="http://youtube.com/" target="_blank">YouTube</a>, <a href="http://vimeo.com/">Vimeo</a>, or <a href="http://media.oregonstate.edu/" target="_blank">MediaSpace</a>. View instructions on <a href="http://extension.oregonstate.edu/help/quick-reference-guide#video_instructions">how to add videos</a>.';
+		$form['field_page_videos']['#description'] = 'Add videos from <a href="http://youtube.com/" target="_blank">YouTube</a>, or <a href="http://vimeo.com/">Vimeo</a>. View instructions on <a href="http://extension.oregonstate.edu/help/quick-reference-guide#video_instructions">how to add videos</a>.';
 	  $keys = array_filter(array_keys($form['field_page_videos']), 'page_images_videos_numeric_filter');
 	  foreach ($keys as $key) {
 			unset($form['field_page_videos'][$key]['embed']['#description']);
